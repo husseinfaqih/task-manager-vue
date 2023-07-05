@@ -23,9 +23,17 @@ const getters = {
   allTasks: (state) => state.tasks,
 };
 
-const actions = {};
+const actions = {
+  addTask({ commit }, task) {
+    commit('add_task', task);
+  },
+};
 
-const mutations = {};
+const mutations = {
+  add_task(state, task) {
+    state.tasks.push(task);
+  },
+};
 
 export default {
   state,
