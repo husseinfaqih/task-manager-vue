@@ -1,6 +1,8 @@
 <template>
   <div class="container">
     <HeaderComponent title="Task Tracker" />
+    <AddTask />
+
     <TasksComponent />
 
   </div>
@@ -9,12 +11,14 @@
 <script>
 import HeaderComponent from "./components/HeaderComponent.vue";
 import TasksComponent from "./components/TasksComponent.vue";
+import AddTask from "./components/AddTask.vue";
 
 export default {
   name: 'App',
   components: {
     HeaderComponent,
-    TasksComponent
+    TasksComponent,
+    AddTask
   }
 }
 </script>
