@@ -1,17 +1,18 @@
 <template>
   <div v-for="task in allTasks" :key="task.id">
-
-    <h3>{{ task.text }}</h3>
-
-
+    <TaskComponent :task="task"></TaskComponent>
 </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
+import TaskComponent from './TaskComponent.vue';
 
 export default {
   name: 'TasksComponent',
+  components: {
+    TaskComponent
+  },
   computed: {
     ...mapGetters(['allTasks'])
   }
