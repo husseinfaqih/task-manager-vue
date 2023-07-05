@@ -1,8 +1,9 @@
 <template>
   <div>
-    <h3 >{{ task.text }}</h3>
+    <h3 v-if="!editing">{{ task.text }}</h3>
+    <input v-model="taskText" v-if="editing" @keydown.enter="saveTask" type="text">
     <i class="fas fa-times" @click="deleteTask(task.id)"></i>
-    <i class="fas fa-pen" ></i>
+    <i :class="['fas', {'fa-pen': !editing, 'fa-check': editing}]" @click="toggleEditing"></i>
   </div>
 </template>
 
@@ -17,11 +18,28 @@ export default {
   data() {
     return {
       taskText: "", // Stores the task text in the input field
+      editing: false // Indicates whether the task is in editing mode
     };
   },
   methods: {
-    ...mapActions(['deleteTask']),
+    ...mapActions(['deleteTask', 'updateTask']),
 
+    toggleEditing() {
+      if (!this.editing) {
+        this.taskText = this.task.text;
+      } else {
+        const updatedTask = {
+          ...this.task,
+          text: this.taskText
+        };
+        this.updateTask(updatedTask);
+      }
+      this.editing = !this.editing; // Toggle editing state
+    },
+
+    saveTask() {
+      this.toggleEditing();
+    }
   }
 }
 </script>

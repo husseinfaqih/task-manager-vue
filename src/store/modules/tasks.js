@@ -1,22 +1,5 @@
 const state = {
-  tasks: [
-    {
-      id: 1,
-      text: 'dummy',
-    },
-    {
-      id: 2,
-      text: 'dummy',
-    },
-    {
-      id: 3,
-      text: 'dummy',
-    },
-    {
-      id: 4,
-      text: 'dummy',
-    },
-  ],
+  tasks: [],
 };
 
 const getters = {
@@ -30,6 +13,9 @@ const actions = {
   deleteTask({ commit }, id) {
     commit('delete_task', id);
   },
+  updateTask({ commit }, task) {
+    commit('update_task', task);
+  },
 };
 
 const mutations = {
@@ -39,13 +25,23 @@ const mutations = {
       state.tasks = tasks;
     }
   },
+
   add_task(state, task) {
     state.tasks.push(task);
     saveTasksToLocalStorage(state.tasks);
   },
+
   delete_task(state, id) {
     state.tasks = state.tasks.filter((task) => task.id !== id);
     saveTasksToLocalStorage(state.tasks);
+  },
+
+  update_task(state, updatedTask) {
+    const index = state.tasks.findIndex((task) => task.id === updatedTask.id);
+    if (index !== -1) {
+      state.tasks[index] = updatedTask;
+      saveTasksToLocalStorage(state.tasks);
+    }
   },
 };
 
