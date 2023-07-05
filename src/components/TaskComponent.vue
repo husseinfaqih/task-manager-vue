@@ -1,8 +1,15 @@
 <template>
   <div>
+    <!-- Display task text when not in editing mode -->
     <h3 v-if="!editing">{{ task.text }}</h3>
+
+    <!-- Input field for editing task text when in editing mode -->
     <input v-model="taskText" v-if="editing" @keydown.enter="saveTask" type="text">
+
+    <!-- Delete task button -->
     <i class="fas fa-times" @click="deleteTask(task.id)"></i>
+
+    <!-- Edit task button -->
     <i :class="['fas', {'fa-pen': !editing, 'fa-check': editing}]" @click="toggleEditing"></i>
   </div>
 </template>
@@ -24,10 +31,17 @@ export default {
   methods: {
     ...mapActions(['deleteTask', 'updateTask']),
 
+    /**
+     * Toggles the editing state of the task and updates the task if the editing state is false.
+     * If the editing state is true, it sets the taskText to the current task text.
+     * If the editing state is false, it updates the task with the new task text.
+     */
     toggleEditing() {
       if (!this.editing) {
+        // Enter editing mode
         this.taskText = this.task.text;
       } else {
+        // Exit editing mode and save changes
         const updatedTask = {
           ...this.task,
           text: this.taskText
@@ -37,6 +51,10 @@ export default {
       this.editing = !this.editing; // Toggle editing state
     },
 
+    /**
+     * Saves the task changes when Enter key is pressed.
+     * It calls the toggleEditing method to save the changes.
+     */
     saveTask() {
       this.toggleEditing();
     }

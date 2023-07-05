@@ -1,10 +1,14 @@
 <template>
+  <!-- App container -->
   <div class="container">
+    <!-- Header component -->
     <HeaderComponent title="Task Tracker" />
+
+    <!-- AddTask component -->
     <AddTask />
 
+    <!-- TasksComponent -->
     <TasksComponent />
-
   </div>
 </template>
 
@@ -13,14 +17,18 @@ import HeaderComponent from "./components/HeaderComponent.vue";
 import TasksComponent from "./components/TasksComponent.vue";
 import AddTask from "./components/AddTask.vue";
 
+/**
+ * App component represents the main application container.
+ * It includes a header, an add task component, and a tasks component that displays all tasks.
+ */
 export default {
-  name: 'App',
+  name: "App",
   components: {
     HeaderComponent,
     TasksComponent,
     AddTask
   }
-}
+};
 </script>
 
 <style>

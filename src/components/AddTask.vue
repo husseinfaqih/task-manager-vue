@@ -23,19 +23,26 @@ export default {
   methods: {
     ...mapActions(['addTask']),
 
+    /**
+     * Adds a new task and clears the input field.
+     */
     addTaskAndClearFields() {
-
+      // Generate a random ID for the new task
       const newTask = {
         id: Math.floor(Math.random() * 100000),
         text: this.text,
       };
 
+      // Dispatch the 'addTask' action with the new task
       this.addTask(newTask);
 
+      // Clear the input field
       this.clearFields();
     },
 
-  
+    /**
+     * Clears the input field.
+     */
     clearFields() {
       this.text = "";
     }
