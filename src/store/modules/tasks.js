@@ -106,6 +106,11 @@ const mutations = {
   },
 };
 
+/**
+ * Saves tasks to local storage.
+ * @param {Array} tasks - The array of tasks to be saved.
+ */
+
 function saveTasksToLocalStorage(tasks) {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
