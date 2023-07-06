@@ -12,6 +12,7 @@
 
 <script>
 import { mapActions } from 'vuex';
+import { v4 as uuidv4 } from 'uuid'; // Import the UUID library
 
 export default {
   name: 'AddTask',
@@ -29,7 +30,7 @@ export default {
     addTaskAndClearFields() {
       // Generate a random ID for the new task
       const newTask = {
-        id: Math.floor(Math.random() * 100000),
+        id: uuidv4(), // Use UUID to generate a unique ID
         text: this.text,
       };
 
