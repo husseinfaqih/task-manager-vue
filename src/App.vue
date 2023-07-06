@@ -1,6 +1,6 @@
 <template>
   <!-- App container -->
-  <div class="font-poppins container mx-auto max-w-2xl mt-8 p-8 bg-white rounded border border-blue-500">
+  <div class="font-poppins container mx-auto max-w-2xl mt-8 p-8 bg-white rounded border-2 border-black">
     <!-- Header component -->
     <HeaderComponent title="Task Tracker" />
 
