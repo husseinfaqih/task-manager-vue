@@ -1,12 +1,12 @@
 <template>
-  <form class="add-form" @submit.prevent="addTaskAndClearFields">
+  <form class="add-form mb-8" @submit.prevent="addTaskAndClearFields">
 
-    <div class="form-control">
-      <label>Task</label>
-      <input type="text" v-model="text" name="text" placeholder="Add Task" />
+    <div class="mb-4">
+      <label class="block my-2">Task</label>
+      <input type="text" v-model="text" name="text" placeholder="Add Task"  class="w-full h-10 px-3 py-2 border rounded-lg text-base" />
     </div>
     
-    <input type="submit" value="Save Task" class="btn btn-block" />
+    <input type="submit" value="Save Task" class="bg-black text-white rounded-md py-2 px-4 block w-full cursor-pointer hover:bg-gray-900" />
   </form>
 </template>
 
@@ -51,39 +51,6 @@ export default {
 };
 </script>
 
-<style scoped>
-.add-form {
-  margin-bottom: 40px;
-}
-
-.form-control {
-  margin: 20px 0;
-}
-
-.form-control label {
-  display: block;
-}
-
-.form-control input {
-  width: 100%;
-  height: 40px;
-  margin: 5px;
-  padding: 3px 7px;
-  font-size: 17px;
-}
-
-.form-control-check {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.form-control-check label {
-  flex: 1;
-}
-
-.form-control-check input {
-  flex: 2;
-  height: 20px;
-}
+<style >
+/* No custom styles are required */
 </style>

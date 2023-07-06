@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>{{ title }}</h1>
+    <h1 class="text-2xl font-bold">{{ title }}</h1>
   </header>
 </template>
 
@@ -20,11 +20,6 @@ export default {
 }
 </script>
 
-<style scoped>
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
+<style>
+/* No custom styles are required */
 </style>
