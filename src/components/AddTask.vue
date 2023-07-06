@@ -50,7 +50,3 @@ export default {
   },
 };
 </script>
-
-<style >
-/* No custom styles are required */
-</style>
