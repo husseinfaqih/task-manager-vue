@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="task">
     <!-- Display task text when not in editing mode -->
     <h3 v-if="!editing">{{ task.text }}</h3>
 
     <!-- Input field for editing task text when in editing mode -->
-    <input v-model="taskText" v-if="editing" @keydown.enter="saveTask" type="text">
+    <input v-model="taskText" v-if="editing" @keydown.enter="saveTask" type="text" class="input">
 
     <!-- Delete task button -->
     <i class="fas fa-times" @click="deleteTask(task.id)"></i>
@@ -64,13 +64,26 @@ export default {
 
 <style scoped>
 .fas {
+  font-size:1.3em;
   color: red;
+  margin-top: 1em;
+  cursor: pointer;
+
+}
+.fa-pen{
+  font-size:1.1em;
+  margin-left:10px ;
+}
+
+.fa-check{
+  margin-left:10px ;
+
 }
 .task {
   background: #f4f4f4;
   margin: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
+  padding: 30px 20px;
+  /* cursor: pointer; */
 }
 .task.reminder {
   border-left: 5px solid green;
@@ -79,5 +92,13 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  margin: 5px;
+  padding: 3px 7px;
+  font-size: 17px;
 }
 </style>
