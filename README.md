@@ -33,6 +33,7 @@ Once the application is running, you can use the Task Tracker to manage your tas
 - The Task Tracker application uses the Vue.js framework and Vuex for state management.
 - The application loads tasks from local storage when it is created and saves tasks to local storage whenever there is a change.
 - The application is styled using CSS and the Poppins font from Google Fonts.
+- For task identification, the application uses UUID (Universally Unique Identifier) to generate random numbers, ensuring unique identifiers for each task. This helps in accurately tracking and managing tasks in the application.
 - External packages like `vuex` and `vue` are used in the application. Make sure to install these packages and ensure that they compile correctly. If you encounter compilation errors, follow the steps mentioned in the "Compilation" section below.
 
 `npm install vuex`
