@@ -1,5 +1,7 @@
 ## Task Manager Application
 
+![Alt Text](./src/assets/taskTracker.png)
+
 The Task Manager application is a **Vue.js** and **Vuex-based application** that helps you track and manage your tasks. To run the application locally, follow the steps below:
 
 ### Approach
