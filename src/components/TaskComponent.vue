@@ -1,16 +1,16 @@
 <template>
-  <div class="task">
+  <div class="task rounded-lg bg-gray-50 p-5 my-2">
     <!-- Display task text when not in editing mode -->
-    <h3 v-if="!editing">{{ task.text }}</h3>
+    <h3 v-if="!editing" >{{ task.text }}</h3>
 
     <!-- Input field for editing task text when in editing mode -->
-    <input v-model="taskText" v-if="editing" @keydown.enter="saveTask" type="text" class="input">
+    <input v-model="taskText" v-if="editing" @keydown.enter="saveTask" type="text" class="w-full h-10 px-3 py-2 border rounded-lg text-base italic">
 
     <!-- Delete task button -->
-    <i class="fas fa-times" @click="deleteTask(task.id)"></i>
+    <i class="fas fa-times text-red-500 cursor-pointer mt-5" @click="deleteTask(task.id)"></i>
 
     <!-- Edit task button -->
-    <i :class="['fas', {'fa-pen': !editing, 'fa-check': editing}]" @click="toggleEditing"></i>
+    <i :class="['fas', {'fa-pen': !editing, 'fa-check': editing}]" class="text-black-500 cursor-pointer ml-2" @click="toggleEditing"></i>
   </div>
 </template>
 
@@ -62,43 +62,6 @@ export default {
 }
 </script>
 
-<style scoped>
-.fas {
-  font-size:1.3em;
-  color: red;
-  margin-top: 1em;
-  cursor: pointer;
-
-}
-.fa-pen{
-  font-size:1.1em;
-  margin-left:10px ;
-}
-
-.fa-check{
-  margin-left:10px ;
-
-}
-.task {
-  background: #f4f4f4;
-  margin: 5px;
-  padding: 30px 20px;
-  /* cursor: pointer; */
-}
-.task.reminder {
-  border-left: 5px solid green;
-}
-.task h3 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.input {
-  width: 100%;
-  height: 40px;
-  margin: 5px;
-  padding: 3px 7px;
-  font-size: 17px;
-}
+<style >
+/* No custom styles are required */
 </style>

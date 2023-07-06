@@ -20,6 +20,6 @@ export default {
 }
 </script>
 
-<style >
-
+<style>
+/* No custom styles are required */
 </style>
