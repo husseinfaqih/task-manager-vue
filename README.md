@@ -9,6 +9,14 @@ Before running the application, make sure you have the following software instal
 - Node.js (version 12 or above)
 - npm (Node Package Manager)
 
+### Installation
+
+To install the required dependencies, navigate to the root directory of the Task Manager application in your terminal or command prompt, and run the following command:
+
+`npm install`
+
+This command will read the package.json file and install all the necessary packages and dependencies required by the application.
+
 ### Running the Application
 
 To run the Task Manager application, follow these steps:
